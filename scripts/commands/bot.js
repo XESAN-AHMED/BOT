@@ -2,7 +2,7 @@ module.exports.config = {
   name: "bot",
   version: "0.0.2",
   permission: 0,
-  prefix: false,
+  prefix: 'awto',
   credits: "Nayan",
   description: "talk with bot",
   category: "user",
