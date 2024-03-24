@@ -17,7 +17,8 @@ module.exports.config = {
   module.exports.run = async function({ api, event, args, Users, Threads, Currencies}) {
     const uid = event.senderID;
     const info = args.join(" ");
-    var n = global.nayan_api
+    const apis = await axios.get('https://raw.githubusercontent.com/MR-NAYAN-404/NAYAN-BOT/main/api.json')
+  const teach = apis.data.sim
     var id = Object.keys(event.mentions)[0] || event.senderID;
   var nam = await Users.getNameUser(id);
   var ThreadInfo = await api.getThreadInfo(event.threadID);
@@ -29,7 +30,7 @@ module.exports.config = {
       const ans = msg[1].trim();
 
 
-      const img = `http://game2.jagoanvps.cloud:5059/sim?type=teach&ask=${ask}&ans=${ans}`
+      const img = `${teach}/sim?type=teach&ask=${ask}&ans=${ans}`
       try {
         const response = await axios.get(img);
 
