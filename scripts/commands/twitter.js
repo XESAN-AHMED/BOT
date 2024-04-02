@@ -32,7 +32,7 @@ module.exports.run = async function({ api, event, args }) {
   if (!args[0]) return api.sendMessage("[ ! ] Input link.", threadID, messageID);
 
   const content = args.join(" ");
-  if (!args[1]) api.sendMessage(`𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐕𝐈𝐃𝐄𝐎 𝐅𝐎𝐑 𝐘𝐎𝐔\n\n𝐏𝐋𝐄𝐀𝐒𝐄 𝐖𝟖...`, event.threadID, (err, info) => setTimeout(() => { api.unsendMessage(info.messageID) }, 20000));
+  if (!args[1]) api.sendMessage(`•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜🌻𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐕𝐈𝐃𝐄𝐎 𝐅𝐎𝐑 𝐘𝐎𝐔\n\n𝐏𝐋𝐄𝐀𝐒𝐄 𝐖𝟖...`, event.threadID, (err, info) => setTimeout(() => { api.unsendMessage(info.messageID) }, 20000));
 
  try {
    const res = await twitterdown(`${content}`);
@@ -50,7 +50,7 @@ console.log(res)
     setTimeout(function() {
       
       return api.sendMessage({
-        body: `🔰𝗔𝗣𝗜 𝗕𝗬 𝗠𝗢𝗛𝗔𝗠𝗠𝗔𝗗 𝗡𝗔𝗬𝗔𝗡`,
+        body: `•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜🌻`,
         attachment: fs.createReadStream(__dirname + '/cache/tw.mp4')
       }, threadID, messageID)
     }, 5000)
