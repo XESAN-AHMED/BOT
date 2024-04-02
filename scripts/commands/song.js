@@ -101,7 +101,7 @@ module.exports.run = async function ({ api, event, args }) {
               num = num+=1
               msg += (`${num} - ${value.title} (${value.length.simpleText})\n\n`);
             }
-            var body = `»🔎 There's ${link.length} the result coincides with your search keyword:\n\n${msg}» Reply(feedback) select one of the searches above `
+            var body = `»ও লে লে🥵বাবু তুমি গান শুনবা🙄🎬এখানে ${link.length} টা গান আছে যেমনটা তুমি খুজতেছো\n\n${msg}»দয়া করে অপশন বেছে নেওয়ার জন্য এই মেসেজের রিপ্লাই দিয়ে অপশন লিখো `
             return api.sendMessage({
               body: body
             }, event.threadID, (error, info) => global.client.handleReply.push({
