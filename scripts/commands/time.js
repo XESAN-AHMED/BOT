@@ -24,6 +24,6 @@ module.exports.run = async function ({ api, event, args, Currencies, Users }) {
   if (kiel == 'Friday') kiel = 'Friday'
   if (kiel == 'Saturday') kiel = 'Saturday'
   let name = await Users.getNameUser(event.senderID);
-  return api.sendMessage(`〘───── •『 𝙏𝙞𝙢𝙚 』• ─────〙\n𝙃𝙚𝙡𝙡𝙤「﹝${name}﹞」\n𝙏𝙝𝙚 𝙥𝙧𝙚𝙨𝙚𝙣𝙩 𝙩𝙞𝙢𝙚 : ${supremo} \n𝘿𝙖𝙮 : ${draven} (${kiel})\n〘───── •『 𝙏𝙞𝙢𝙚 』• ─────〙`, event.threadID, event.messageID)
+  return api.sendMessage(`〘───•『 𝙏𝙞𝙢𝙚 』•───〙\n𝙃𝙚𝙡𝙡𝙤「﹝${name}﹞」\n𝙏𝙝𝙚 𝙥𝙧𝙚𝙨𝙚𝙣𝙩 𝙩𝙞𝙢𝙚 : ${supremo} \n𝘿𝙖𝙮 : ${draven} (${kiel})\n〘───•『 𝙏𝙞𝙢𝙚 』•───〙\n•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜🌻`, event.threadID, event.messageID)
 }
 
