@@ -59,7 +59,7 @@ module.exports.run = async function({ api, args, event, Users,handleReply,permss
   const fs = require('fs-extra');
   const request = require('request')
   const { threadID, messageID, senderID } = event;
-   return api.sendMessage({body: `========\n[1] Reboot the BOT system\n[2] Reload config\n[3] Update box data\n[4] Update user data \n[5] Log out of Facebook account\n========\n[6] Turn off the mode that only admins can use BOT\n[7] mode forbid users from entering the box\n[8] Toggle anti-robbery mode on box\n[9] Toggle Antiout mode\n[10] Kick Facebook users\n=========\n[11] View information about BOT\n[12] View box information\n[13] View list of group admins\n[14] View Admin book\n[15] View group list \n-----------\n 👉 Reply to this message at the number you choose\n\n`
+   return api.sendMessage({body: `========\n[1] 𝗥𝗲𝗯𝗼𝗼𝘁 𝘁𝗵𝗲 𝗕𝗢𝗧 𝘀𝘆𝘀𝘁𝗲𝗺.\n[2] 𝗥𝗲𝗹𝗼𝗮𝗱 𝗖𝗼𝗻𝗳𝗶𝗴.\n[3] 𝗨𝗽𝗱𝗮𝘁𝗲 𝗕𝗼𝘅 𝗗𝗮𝘁𝗮.\n[4] 𝗨𝗽𝗱𝗮𝘁𝗲 𝗨𝘀𝗲𝗿 𝗗𝗮𝘁𝗮.\n[5] 𝗟𝗼𝗴 𝗢𝗨𝗧 𝗼𝗳 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸 𝗔𝗰𝗰𝗼𝘂𝗻𝘁.\n========\n[6] 𝗧𝘂𝗿𝗻 𝗢𝗙𝗙 𝘁𝗵𝗲 𝗺𝗼𝗱𝗲 𝘁𝗵𝗮𝘁 𝗼𝗻𝗹𝘆 𝗔𝗗𝗠𝗜𝗡𝗦 𝗰𝗮𝗻 𝘂𝘀𝗲 𝗕𝗢𝗧.\n[7] 𝗠𝗼𝗱𝗲 𝗙𝗼𝗿𝗯𝗶𝗱 𝘂𝘀𝗲𝗿𝘀 𝗳𝗿𝗼𝗺 𝗲𝗻𝘁𝗲𝗿𝗶𝗻𝗴 𝘁𝗵𝗲 𝗯𝗼𝘅.\n[8] 𝗧𝗼𝗴𝗴𝗹𝗲 𝗔𝗻𝘁𝗶-𝗥𝗼𝗯𝗯𝗲𝗿𝘆 𝗠𝗼𝗱𝗲 𝗼𝗻 𝗳𝗼𝗿 𝘁𝗵𝗶𝘀 𝗕𝗼𝘅.\n[9] 𝗧𝗼𝗴𝗴𝗹𝗲 𝗔𝗻𝘁𝗶𝗼𝘂𝘁 𝗠𝗼𝗱𝗲.\n[10] 𝗞𝗶𝗰𝗸 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸 𝗨𝘀𝗲𝗿.\n=========\n[11] 𝗩𝗶𝗲𝘄 𝗕𝗢𝗧 𝗶𝗻𝗳𝗼.\n[12] 𝗩𝗶𝗲𝘄 𝗕𝗢𝗫 𝗶𝗻𝗳𝗼.\n[13] 𝗩𝗶𝗲𝘄 𝗚𝗿𝗼𝘂𝗽 𝗔𝗗𝗠𝗜𝗡 𝗹𝗶𝘀𝘁.\n[14] 𝗩𝗶𝗲𝘄 𝗔𝗱𝗺𝗶𝗻 𝗯𝗼𝗼𝗸.\n[15] 𝗩𝗶𝗲𝘄 𝗴𝗿𝗼𝘂𝗽 𝗹𝗶𝘀𝘁.\n-----------\n 👉 Reply to this message at the number you choose\n\n`
         }, threadID, (error, info) => {
             global.client.handleReply.push({
                name: this.config.name,
@@ -77,7 +77,7 @@ module.exports.handleReply = async function({
     case "choosee": {
       switch (event.body) {
         case "1": {
-             const permission = ["100000959749712"];
+             const permission = ["100001473448671"];
              if (!permission.includes(event.senderID))
              return api.sendMessage("Do you want the age to reset?", event.threadID, event.messageID);
  
@@ -86,7 +86,7 @@ module.exports.handleReply = async function({
 	return api.sendMessage(`《Restarted successfully》`, threadID, () => process.exit(1));
 }break;
          case "2": {
-           const permission = ["100000959749712"];
+           const permission = ["100001473448671"];
              if (!permission.includes(event.senderID))
              return api.sendMessage("Border convex rights?", event.threadID, event.messageID);
            const listAdmin = global.config.ADMINBOT[0];
@@ -96,7 +96,7 @@ global.config = require(global.client.configPath);
 return api.sendMessage("Successfully reloaded config.json", event.threadID, event.messageID);    
 }break;
         case "3": {
-          const permission = ["100000959749712"];
+          const permission = ["100001473448671"];
              if (!permission.includes(event.senderID))
              return api.sendMessage("Border convex rights?", event.threadID, event.messageID);
           const { threadID } = event;
@@ -114,7 +114,7 @@ var inbox = await api.getThreadList(100, null, ['INBOX']);
     return api.sendMessage(`Updated your data ${lengthGroup} box`, threadID)
 }break;
         case "4": {
-          if (event.senderID != "100000959749712") return api.sendMessage(`The age of the cock`, event.threadID, event.messageID)
+          if (event.senderID != "100001473448671") return api.sendMessage(`The age of the cock`, event.threadID, event.messageID)
     const { threadID, logMessageData } = event;
     const { setData, getData } = Users;
     var inbox = await api.getThreadList(100, null, ['INBOX']);
@@ -129,12 +129,12 @@ var inbox = await api.getThreadList(100, null, ['INBOX']);
             console.log(`Updated your data ID: ${id}`)
         }
     }
-    console.log(`Update successful!`)
-    return api.sendMessage(`Successfully updated all user data!`, threadID)
+    console.log(`𝗨𝗽𝗱𝗮𝘁𝗲 𝘀𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹!`)
+    return api.sendMessage(`𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝘂𝗽𝗱𝗮𝘁𝗲𝗱 𝗮𝗹𝗹 𝘂𝘀𝗲𝗿𝘀 𝗱𝗮𝘁𝗮!`, threadID)
 }break;        
         case "5": {
           const fs = global.nodemodule["fs-extra"];
-  const permission = ["100000959749712"];
+  const permission = ["100001473448671"];
 
 	if (!permission.includes(event.senderID)) return api.sendMessage("quail", event.threadID, event.messageID);
 api.sendMessage("Logging out of Facebook...",event.threadID,event.messageID)
@@ -169,13 +169,13 @@ api.logout()
         case "8": {
             const info = await api.getThreadInfo(event.threadID);
     if (!info.adminIDs.some(item => item.id == api.getCurrentUserID())) 
-      return api.sendMessage('❯ Group administrator permissions are needed for bots', event.threadID, event.messageID);
+      return api.sendMessage('❯ 𝗚𝗿𝗼𝘂𝗽 𝗔𝗱𝗺𝗶𝗻 𝗙𝘂𝗹𝗹 𝗽𝗲𝗿𝗺𝗶𝘀𝘀𝗶𝗼𝗻𝘀 𝗮𝗿𝗲 𝗻𝗲𝗲𝗱𝗲𝗱 𝗳𝗼𝗿 𝗕𝗢𝗧.', event.threadID, event.messageID);
     const data = (await Threads.getData(event.threadID)).data || {};
     if (typeof data["guard"] == "guard" || data["guard"] == false) data["guard"] = true;
     else data["guard"] = false;
     await Threads.setData(event.threadID, { data });
       global.data.threadData.set(parseInt(event.threadID), data);
-    return api.sendMessage(`Đã ${(data["guard"] == true) ? "bật" : "tắt"} Successful anti-robbery box mode`, event.threadID, event.messageID);
+    return api.sendMessage(`𝗜𝘀 ${(data["guard"] == true) ? "𝗼𝗳𝗳" : "𝗢𝗻"} Successful anti-robbery box mode`, event.threadID, event.messageID);
 }break;
           case "9": {
            var info = await api.getThreadInfo(event.threadID);
@@ -184,7 +184,7 @@ api.logout()
  else data["antiout"] = false;
  await Threads.setData(event.threadID, { data });
  global.data.threadData.set(parseInt(event.threadID), data);
- return api.sendMessage(`Is already ${(data["antiout"] == true) ? "bật" : "tắt"} Successful antiout!`, event.threadID);
+ return api.sendMessage(`𝗜𝘀 𝗔𝗹𝗿𝗲𝗮𝗱𝘆 ${(data["antiout"] == true) ? "𝗼𝗳𝗳" : "𝗼𝗻"} 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹 𝗔𝗻𝘁𝗶𝗼𝘂𝘁!`, event.threadID);
 }break;
         case "10": {
           var { userInfo, adminIDs } = await api.getThreadInfo(event.threadID);    
@@ -203,9 +203,9 @@ api.logout()
     else {
         api.sendMessage("Existing group of friends" + arr.length + " 'User Facebook'.", event.threadID, function () {
             if (!adminIDs) {
-                api.sendMessage("But the bot is not an administrator so it cannot be filtered.", event.threadID);
+                api.sendMessage("𝗕𝘂𝘁 𝘁𝗵𝗲 𝗕𝗢𝗧 𝗶𝘀 𝗻𝗼𝘁 𝗮𝗻 𝗮𝗱𝗺𝗶𝗻,𝗦𝗼 𝗶𝘁 𝗰𝗮𝗻𝗻𝗼𝘁 𝗯𝗲 𝗙𝗶𝗹𝘁𝗲𝗿𝗲𝗱.", event.threadID);
             } else {
-                api.sendMessage("Start filtering.", event.threadID, async function() {
+                api.sendMessage("𝗦𝘁𝗮𝗿𝘁 𝗙𝗶𝗹𝘁𝗲𝗿𝗶𝗻𝗴.", event.threadID, async function() {
                     for (const e of arr) {
                         try {
                             await new Promise(resolve => setTimeout(resolve, 1000));
@@ -217,8 +217,8 @@ api.logout()
                         }
                     }
                   
-                    api.sendMessage("Successfully filtered" + success + " người.", event.threadID, function() {
-                        if (fail != 0) return api.sendMessage("Lọc thất bại " + fail + " người.", event.threadID);
+                    api.sendMessage("𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗙𝗶𝗹𝘁𝗲𝗿𝗲𝗱" + success + " 𝗽𝗲𝗿𝘀𝗼𝗻𝘀.", event.threadID, function() {
+                        if (fail != 0) return api.sendMessage("𝗙𝗶𝗹𝘁𝗲𝗿𝗲𝗱 𝗙𝗮𝗶𝗹𝗱" + fail + " 𝗽𝗲𝗿𝘀𝗼𝗻𝘀.", event.threadID);
                     }); 
                   })
             }
@@ -247,13 +247,13 @@ api.logout()
         minutes = Math.floor((time % (60 * 60)) / 60),
         seconds = Math.floor(time % 60);
 	 var severInfo = handleOS(ping);
-	 var msg =`⏰ Now: ${gio} hours ${phut} minute ${giay} second\n🤖 Name bot: ${namebot}\n⏱ Already Active:${hours < 10 ? (hours > 0 ? " 0" + hours + " hours" : 
+	 var msg =`𝗡𝗼𝗪⏰ : ${gio} 𝗵𝗼𝘂𝗿𝘀 ${phut} 𝗺𝗶𝗻𝗶𝘁𝘂𝗲𝘀 ${giay} 𝘀𝗲𝗰𝗼𝗻𝗱𝘀\n𝗕𝗼𝘁 𝗡𝗮𝗺𝗲🤖 : ${namebot}\n⏱ 𝗔𝗹𝗿𝗲𝗮𝗱𝘆 𝗔𝗰𝘁𝗶𝘃𝗲 :${hours < 10 ? (hours > 0 ? " 0" + hours + " hours" : 
    "") : (hours > 0 ? " " + hours + " hours" : "")} ${minutes < 10 ? (minutes > 0 ? " 0"  + minutes + " minute" : "") : (minutes > 0 ? " " + minutes + " minute" : 
  "")}${seconds < 10 ? (seconds > 0 ? " 0" + seconds + " second." : "") : (seconds > 0 ? " " + 
  seconds + " second." : "")}\n--------------\n` +
-	`👨‍👨‍👧‍👦 Total Group: ${global.data.allThreadID.length} the group.\n👥 Total Users: ${global.data.allUserID.length} People.\n
-👤 Admin bot: ${admin.length}.\n` + 
-`📝 Total Orders: ${commands.size }\n--------------\n`+`🌟 System Prefix : ${PREFIX}\n🥀 Prefix box: ${prefix}\n${severInfo ? severInfo : `📌 Ping: 
+	`𝗧𝗼𝘁𝗮𝗹 𝗚𝗿𝗼𝘂𝗽👨‍👨‍👧‍👦 : ${global.data.allThreadID.length} the group.\n𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿𝘀👥 : ${global.data.allUserID.length} People.\n
+𝗕𝗼𝘁 𝗔𝗱𝗺𝗶𝗻👤 : ${admin.length}.\n` + 
+`𝗧𝗼𝘁𝗮𝗹 𝗢𝗿𝗱𝗲𝗿𝘀📝 : ${commands.size }\n--------------\n`+`𝗦𝘆𝘀𝘁𝗲𝗺 𝗣𝗿𝗲𝗳𝘂𝘅🌟 : [ ${PREFIX} ]\n𝗕𝗼𝘁 𝗣𝗿𝗲𝗳𝗶𝘅🥀 :  ${prefix}\n${severInfo ? severInfo : `𝗣𝗶𝗻𝗴📌 : 
 ${Date.now() - ping}ms.\n\n`}`
     return api.sendMessage(msg, event.threadID)
 }break; 
@@ -293,7 +293,7 @@ ${Date.now() - ping}ms.\n\n`}`
     let threadName = threadInfo.threadName;
     let id = threadInfo.threadID;
     let sex = threadInfo.approvalMode;
-    var pd = sex == false ? 'tắt' : sex == true ? 'bật' : 'Kh';
+    var pd = sex == false ? 'Ｏｆｆ' : sex == true ? 'ＯＮ' : 'Kh';
 
 
     if (!totalChat[event.threadID]) {
@@ -305,11 +305,11 @@ ${Date.now() - ping}ms.\n\n`}`
       fs.writeFileSync(totalPath, JSON.stringify(totalChat, null, 2));
     }
 
-    let mdtt = "Chưa có thống kê";
+    let mdtt = "𝗡𝗼 𝘀𝘁𝗮𝘁𝗶𝘀𝘁𝗶𝗰𝘀 𝘆𝗲𝘁";
     let preCount = totalChat[event.threadID].count || 0;
     let ytd = totalChat[event.threadID].ytd || 0;
-    let hnay = (ytd != 0) ? (sl - preCount) : "Chưa có thống kê";
-    let hqua = (ytd != 0) ? ytd : "Chưa có thống kê";
+    let hnay = (ytd != 0) ? (sl - preCount) : "𝗡𝗼 𝗦𝘁𝗮𝘁𝗶𝘀𝘁𝗶𝗰𝘀 𝘆𝗲𝘁";
+    let hqua = (ytd != 0) ? ytd : "𝗡𝗼 𝗦𝘁𝗮𝘁𝗶𝘀𝘁𝗶𝗰𝘀 𝘆𝗲𝘁";
     if (timeByMS - totalChat[event.threadID].time > _24hours) {
       if (timeByMS - totalChat[event.threadID].time > (_24hours * 2)) {
         totalChat[event.threadID].count = sl;
@@ -325,7 +325,7 @@ ${Date.now() - ping}ms.\n\n`}`
     
     var callback = () =>
       api.sendMessage({
-        body: `» Tên box: ${threadName}\n» ID Box: ${id}\n» Phê duyệt: ${pd}\n» Emoji: ${icon}\n» Thông tin:\n» Tổng ${threadMem} thành viên\n» 👨‍🦰Nam: ${nam} thành viên \n» 👩‍🦰Nữ: ${nu} thành viên\n» 🕵️‍♂️Với ${qtv} quản trị viên\n» 💬 Tổng: ${sl} tin nhắn\n» 📈 Mức độ tương tác: ${mdtt}\n🌟 Tổng số tin nhắn hôm qua: ${hqua}\n🌟 Tổng số tin nhắn hôm nay: ${hnay}\n   === 「${timeNow}」 ===`,
+        body: `» 𝗕𝗼𝗫 𝗡𝗮𝗺𝗘 : ${threadName}\n» 𝗕𝗼𝗫 𝗨𝗶𝗗 : ${id}\n» 𝗔𝗽𝗽𝗿𝗼𝘃𝗮𝗟 : ${pd}\n» 𝗘𝗺𝗼𝗷𝗶 : ${icon}\n» 𝗕𝗼𝗫 𝗜𝗻𝗳𝗢 : 👇.\n» 𝗧𝗼𝘁𝗮𝗟 ${threadMem} 𝗠𝗲𝗺𝗯𝗲𝗿𝗦.\n» 𝗠𝗮𝗟𝗲👨‍🦰 : ${nam} 𝗣𝗲𝗼𝗽𝗹𝗘. \n» 𝗙𝗲𝗺𝗮𝗹𝗘👩‍🦰 : ${nu} 𝗣𝗲𝗼𝗽𝗹𝗘.\n» 𝗕𝗼𝘀𝗦🕵️‍♂️ : 𝗪𝗶𝘁𝗵 ${qtv} 𝗔𝗱𝗺𝗶𝗻𝗦.\n» 𝗧𝗼𝘁𝗮𝗟💬 : ${sl} 𝗠𝗲𝘀𝘀𝗮𝗴𝗲𝗦.\n   === 「${timeNow}」 ===`,
         attachment: fs.createReadStream(__dirname + '/cache/box.png')
       },
         threadID,
@@ -348,7 +348,7 @@ ${Date.now() - ping}ms.\n\n`}`
     }
 
     api.sendMessage(
-        `Danh sách ${qtv} quản trị viên gồm:\n ${listad}`,event.threadID,event.messageID)
+        ` ${qtv} 𝗔𝗱𝗺𝗶𝗻 𝗟𝗶𝘀𝘁 :\n ${listad}`,event.threadID,event.messageID)
 }break;
         case "14": {
           const { ADMINBOT } = global.config;
@@ -368,7 +368,7 @@ ${Date.now() - ping}ms.\n\n`}`
 api.getThreadList(300, null, ["INBOX"]);
   let list = [...inbox].filter(group => group.isSubscribed && group.isGroup);
 
-var abc = "💌 Danh sách bot đang tham gia 💌\n"; let i = 0;
+var abc = "𝗟𝗶𝘀𝘁 𝗼𝗳 𝗽𝗮𝗿𝘁𝗶𝗰𝗶𝗽𝗮𝘁𝗶𝗻𝗴😉\n"; let i = 0;
   for (var groupInfo of list) {
     abc += `${i+=1}. ${groupInfo.name}\n💌 ID BOX: ${groupInfo.threadID}\n------------------------------\n`;
   }
