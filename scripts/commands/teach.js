@@ -23,7 +23,7 @@ module.exports.config = {
   var nam = await Users.getNameUser(id);
   var ThreadInfo = await api.getThreadInfo(event.threadID);
     if (!info) {
-      return api.sendMessage(`Please enter in the format:\n${global.config.PREFIX}teach hi = hello`, event.threadID);
+      return api.sendMessage(`Please enter in the format:\n${global.config.PREFIX}teach XeSan = hello`, event.threadID);
     } else {
       const msg = info.split("=");
       const ask = msg[0].trim();
@@ -36,7 +36,7 @@ module.exports.config = {
 
 
                 api.sendMessage({ 
-          body: `📝Your Data Added To Database Successfully\n1️⃣ASK: ${ask}\n2️⃣ANS: ${ans}`
+          body: `📝Your Data Added To Database Successfully\n[🔥] ASK : ${ask}\n[🔥] ANS : ${ans} \n•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜🌻`
                         }, event.threadID);
                       } catch (error) {
                         console.error(error);
