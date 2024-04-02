@@ -37,7 +37,7 @@ const fs = global.nodemodule["fs-extra"];
              ];
   var know = hi[Math.floor(Math.random() * hi.length)];
   var link = [
-  "https://i.postimg.cc/7LdGnyjQ/images-31.jpg",
+  "https://i.postimg.cc/tT3mgkMm/20240330-134113.jpg",
   "https://i.postimg.cc/65c81ZDZ/images-30.jpg",
 "https://i.postimg.cc/Y0wvTzr6/images-29.jpg",
 "https://i.postimg.cc/1Rpnw2BJ/images-28.jpg",
