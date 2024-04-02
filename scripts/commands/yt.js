@@ -25,7 +25,7 @@ start: async function({ nayan, events, args }) {
 
 
     let np = args.join(" ");
-   if (!args[1]) nayan.sendMessage(`𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐕𝐈𝐃𝐄𝐎 𝐅𝐎𝐑 𝐘𝐎𝐔\n\n𝐏𝐋𝐄𝐀𝐒𝐄 𝐖𝟖...`, events.threadID, (err, info) => setTimeout(() => { nayan.unsendMessage(info.messageID) }, 20000));
+   if (!args[1]) nayan.sendMessage(`•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐕𝐈𝐃𝐄𝐎 𝐅𝐎𝐑 𝐘𝐎𝐔\n\n𝐏𝐋𝐄𝐀𝐒𝐄 𝐖𝟖...`, events.threadID, (err, info) => setTimeout(() => { nayan.unsendMessage(info.messageID) }, 20000));
 
  try {
     const res = await ytdown(`${np}`);
@@ -43,7 +43,7 @@ start: async function({ nayan, events, args }) {
     allimage.push(fs.createReadStream(__dirname + "/cache/fbvideo.mp4"));
 
     {
-        msg += `✅Downloaded Successfully\n🔰TITLE : ${ti}`
+        msg += `•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜 Downloaded Successfully✅\n🔰TITLE : ${ti}`
     }
 
     return nayan.reply({
