@@ -15,8 +15,8 @@ module.exports = {
     "vi": {},
         "en": {
             "missing": '[ ! ] Input link.',
-            "wait": '𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐕𝐈𝐃𝐄𝐎 𝐅𝐎𝐑 𝐘𝐎𝐔\n\n𝐏𝐋𝐄𝐀𝐒𝐄 𝐖𝟖...',
-          "down": '✅Downloaded Successfully',
+            "wait": '•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜🌻𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 𝐕𝐈𝐃𝐄𝐎 𝐅𝐎𝐑 𝐘𝐎𝐔\n\n𝐏𝐋𝐄𝐀𝐒𝐄 𝐖𝟖...',
+          "down": '•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜🌻Downloaded Successfully',
           "error": '❌Error'
         }
     },
