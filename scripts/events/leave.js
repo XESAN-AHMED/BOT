@@ -13,14 +13,14 @@ module.exports.run = async function({ api, event, Users, Threads }) {
 	const { threadID } = event;
 	const data = global.data.threadData.get(parseInt(threadID)) || (await Threads.getData(threadID)).data;
 	const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
-	const type = (event.author == event.logMessageData.leftParticipantFbId) ? "লিভ নেউয়ার জন্য ধন্যবাদ 🤢" : "Kicked by Administrator";
+	const type = (event.author == event.logMessageData.leftParticipantFbId) ? "কিক দেওয়ার জন্য ধন্যবাদ \n•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜🌻" : "Kicked by 𝗔𝗗𝗠𝗜𝗡";
 	const path = join(__dirname, "nayan", "leaveGif");
 	const gifPath = join(path, `l.gif`);
 	var msg, formPush
 
 	if (existsSync(path)) mkdirSync(path, { recursive: true });
 
-	(typeof data.customLeave == "undefined") ? msg = "তুই {name} গ্রুপে থাকার যোগ্য না আবাল .\n\n{type} " : msg = data.customLeave;
+	(typeof data.customLeave == "undefined") ? msg = " {name} তুই গ্রুপে থাকার যোগ্য না বলদ \n•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜🌻.\n\n{type} " : msg = data.customLeave;
 	msg = msg.replace(/\{name}/g, name).replace(/\{type}/g, type);
 
 	if (existsSync(gifPath)) formPush = { body: msg, attachment: createReadStream(gifPath) }
