@@ -54,7 +54,7 @@ module.exports.handleReply = async function ({ api, event, handleReply }) {
         if (fs.statSync(path).size > 26214400) return api.sendMessage('The file cannot be sent because the capacity is greater than 25MB.', event.threadID, () => fs.unlinkSync(path), event.messageID);
         api.unsendMessage(handleReply.messageID)
         return api.sendMessage({ 
-		body: `🎵 Title: ${data.title}\n🎶 Name Channel : ${data.author}\n⏱️ Time: ${this.convertHMS(data.dur)}\n👀 Views: ${data.viewCount}\n🥰 Likes: ${data.likes}\n⏱️Processing time: ${Math.floor((Date.now()- data.timestart)/1000)} second\n💿====DISME PROJECT====💿`,
+		body: `𝗦𝗼𝗻𝗴 𝗡𝗮𝗠𝗲 : ${data.title}\n𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝗡𝗮𝗠𝗲 : ${data.author}\n𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : ${this.convertHMS(data.dur)}\n𝗧𝗼𝘁𝗮𝗹 𝗩𝗶𝗘𝘄𝘀 : ${data.viewCount}\n𝗧𝗼𝘁𝗮𝗹 𝗟𝗶𝗞𝗲𝘀 : ${data.likes}\n𝗣𝗿𝗼𝗰𝗲𝘀𝘀𝗶𝗻𝗴 𝗧𝗶𝗺𝗲 : ${Math.floor((Date.now()- data.timestart)/1000)} second\n\n𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆\n•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜🌻`,
             attachment: fs.createReadStream(path)}, event.threadID, ()=> fs.unlinkSync(path), 
          event.messageID)
             
@@ -83,7 +83,7 @@ module.exports.run = async function ({ api, event, args }) {
             var data = await downloadMusicFromYoutube(args.join(" "), path);
             if (fs.statSync(path).size > 26214400) return api.sendMessage('Unable to send files because the capacity is greater than 25MB .', event.threadID, () => fs.unlinkSync(path), event.messageID);
             return api.sendMessage({ 
-                body: `🎵 Title: ${data.title}\n🎶 Name Channel: ${data.author}\n⏱️ Time: ${this.convertHMS(data.dur)}\n👀 Views: ${data.viewCount}\n👍 Likes: ${data.likes}\n⏱️ Processing time: ${Math.floor((Date.now()- data.timestart)/1000)} second\n💿====DISME PROJECT====💿`,
+                body: `𝗦𝗼𝗻𝗴 𝗡𝗮𝗠𝗲 : ${data.title}\n𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝗡𝗮𝗠𝗲 : ${data.author}\n𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : ${this.convertHMS(data.dur)}\n𝗧𝗼𝘁𝗮𝗹 𝗩𝗶𝗘𝘄𝘀 : ${data.viewCount}\n𝗧𝗼𝘁𝗮𝗹 𝗟𝗶𝗸𝗘𝘀 : ${data.likes}\n𝗣𝗿𝗼𝗰𝗲𝘀𝘀𝗶𝗻𝗴 𝗧𝗶𝗺𝗲 : ${Math.floor((Date.now()- data.timestart)/1000)} second\n\n𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆\n•➠𝗫𝗘𝗦𝗔𝗡~𝗕𝗢𝗧💜🌻`,
                 attachment: fs.createReadStream(path)}, event.threadID, ()=> fs.unlinkSync(path), 
             event.messageID)
             
@@ -101,7 +101,7 @@ module.exports.run = async function ({ api, event, args }) {
               num = num+=1
               msg += (`${num} - ${value.title} (${value.length.simpleText})\n\n`);
             }
-            var body = `»ও লে লে🥵বাবু তুমি গান শুনবা🙄🎬এখানে ${link.length} টা গান আছে যেমনটা তুমি খুজতেছো\n\n${msg}»দয়া করে অপশন বেছে নেওয়ার জন্য এই মেসেজের রিপ্লাই দিয়ে অপশন লিখো `
+            var body = `»ও লে লে🥵বাবু তুমি গান শুনবা🙄🎬এখানে ${link.length} টা গান আছে যেমনটা তুমি খুজতেছো\n\n${msg}» অপশন বেছে নেওয়ার জন্য এই মেসেজের রিপ্লাই দিয়ে অপশন লিখো `
             return api.sendMessage({
               body: body
             }, event.threadID, (error, info) => global.client.handleReply.push({
