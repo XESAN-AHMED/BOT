@@ -47,8 +47,8 @@ module.exports.handleReply = async function ({ api, event, handleReply, Users, T
     let name = await Users.getNameUser(senderID);
     switch (handleReply.type) {
         case "sendnoti": {
-            let text = `${name} replied to your announce\n\ntime : ${gio}\nreply : ${body}\n\nfrom group : ${(await Threads.getInfo(threadID)).threadName || "unknown"}`;
-            if(event.attachments.length > 0) text = await getAtm(event.attachments, `${body}${name} replied to your announce\n\ntime : ${gio}\n\nfrom group : ${(await Threads.getInfo(threadID)).threadName || "unknown"}`);
+            let text = `${name} 𝗿𝗲𝗽𝗹𝗶𝗲𝗱 𝘁𝗼 𝘆𝗼𝘂𝗿 𝘀𝗺𝘀\n\n𝗧𝗶𝗺𝗲 : ${gio}\n𝗥𝗲𝗽𝗹𝘆 𝗦𝗠𝗦 : ${body}\n\n𝗙𝗿𝗼𝗺 𝗚𝗿𝗼𝘂𝗽 : ${(await Threads.getInfo(threadID)).threadName || "unknown"}`;
+            if(event.attachments.length > 0) text = await getAtm(event.attachments, `${body}${name} 𝗥𝗲𝗽𝗹𝗶𝗲𝗱 𝘁𝗼 𝘆𝗼𝘂𝗿 𝗮𝗻𝗻𝗼𝘂𝗻𝘀𝗺𝗲𝗻𝘁\n\n𝗧𝗶𝗺𝗲 : ${gio}\n\n𝗙𝗿𝗼𝗺 𝗚𝗿𝗼𝘂𝗽 : ${(await Threads.getInfo(threadID)).threadName || "unknown"}`);
             api.sendMessage(text, handleReply.threadID, (err, info) => {
                 atmDir.forEach(each => fs.unlinkSync(each))
                 atmDir = [];
@@ -63,8 +63,8 @@ module.exports.handleReply = async function ({ api, event, handleReply, Users, T
             break;
         }
         case "reply": {
-            let text = `admin ${name} replied to you\n\nreply : ${body}\n\nreply to this message if you want to respond again.`;
-            if(event.attachments.length > 0) text = await getAtm(event.attachments, `${body}${name} replied to you\n\nreply to this message if you want to respond again.`);
+            let text = `𝗔𝗱𝗺𝗶𝗻 ${name} 𝗿𝗲𝗽𝗹𝗶𝗲𝗱 𝘁𝗼 𝘆𝗼𝘂\n\n𝗥𝗘𝗣𝗟𝗬 𝗦𝗠𝗦  : ${body}\n\nreply to this message if you want to respond again.`;
+            if(event.attachments.length > 0) text = await getAtm(event.attachments, `${body}${name} 𝗿𝗲𝗽𝗹𝗶𝗲𝗱 𝘁𝗼 𝘆𝗼𝘂\n\nreply to this message if you want to respond again.`);
             api.sendMessage(text, handleReply.threadID, (err, info) => {
                 atmDir.forEach(each => fs.unlinkSync(each))
                 atmDir = [];
@@ -87,8 +87,8 @@ module.exports.run = async function ({ api, event, args, Users }) {
     if (!args[0]) return api.sendMessage("please input message", threadID);
     let allThread = global.data.allThreadID || [];
     let can = 0, canNot = 0;
-    let text = `message from admins\n\ntime : ${gio}\nadmin name : ${await Users.getNameUser(senderID)}\nmessage : ${args.join(" ")}\n\nreply to this message if you want to respond from this announce.`;
-    if(event.type == "message_reply") text = await getAtm(messageReply.attachments, `message from admins\n\ntime : ${gio}\nadmin name : ${await Users.getNameUser(senderID)}\nmessage : ${args.join(" ")}\n\nreply to this message if you want to respond from this announce.`);
+    let text = `𝗔𝗡𝗡𝗢𝗨𝗡𝗖𝗘𝗠𝗘𝗡𝗧\n\ntime : ${gio}\n𝗔𝗱𝗺𝗶𝗻 𝗡𝗮𝗺𝗲 : ${await Users.getNameUser(senderID)}\n𝗦𝗠𝗦 𝗳𝗼𝗿 𝘆𝗼𝘂 : ${args.join(" ")}\n\nreply to this message if you want to respond from this announce.`;
+    if(event.type == "message_reply") text = await getAtm(messageReply.attachments, `𝗔𝗡𝗡𝗢𝗨𝗡𝗖𝗘𝗠𝗘𝗡𝗧\n\ntime : ${gio}\n𝗔𝗱𝗺𝗶𝗻 𝗡𝗮𝗺𝗲 : ${await Users.getNameUser(senderID)}\n𝗦𝗠𝗦 𝗳𝗼𝗿 𝘆𝗼𝘂 : ${args.join(" ")}\n\nreply to this message if you want to respond from this announce.`);
     await new Promise(resolve => {
         allThread.forEach((each) => {
             try {
